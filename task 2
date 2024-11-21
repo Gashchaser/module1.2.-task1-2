@@ -1,0 +1,24 @@
+public class Task2 {
+    public boolean ContainsDublicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Task2 task = new Task2();
+
+        int[] num1 = {4,5,6,6,8};
+
+        int[] num2 = {4,5,6,7,8};
+
+        boolean result = task.ContainsDublicate(num1);
+        System.out.println("Array:" + Arrays.toString(num1) + " массив содержит дубликаты? " + result);
+        boolean result2 = task.ContainsDublicate(num2);
+        System.out.println("Array:" + Arrays.toString(num2) + " массив содержит дубликаты? "  + result2);
+        }
+    }
