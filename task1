@@ -1,0 +1,30 @@
+public class Task1 {
+        public int[] TwoSum(int[] nums, int target) {
+            HashMap<Integer, Integer> map = new HashMap<>();
+
+            for (int i = 0; i < nums.length; i++) { 
+                int complement = target - nums[i]; 
+
+                if (map.containsKey(complement)) { 
+                    return new int[] { map.get(complement), i }; 
+                }
+
+                map.put(nums[i], i); 
+            }
+
+            return new int[0]; 
+        }
+
+        public static void main(String[] args) {
+            Task1 TwoSum = new Task1();
+            int[] nums = {3, 8, 15, 17};
+            int target = 20;
+            int[] result = TwoSum.TwoSum(nums, target);
+
+            if (result.length == 2) {
+                System.out.println("Индексы: " + result[0] + ", " + result[1]);
+            } else {
+                System.out.println("Пара не найдена.");
+            }
+        }
+    }
